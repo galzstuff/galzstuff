@@ -25,30 +25,6 @@ h1 {
   color: #555;
 }
 
-section {
-  padding: 3rem 2rem;
-  max-width: 700px;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-  color: #006d77;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-  transition: 0.3s;
-}
-a:hover {
-  text-decoration: underline;
-}
-
 footer {
   text-align: center;
   padding: 2rem;
@@ -56,16 +32,66 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Win98 Window Style */
+.win98-window {
+  position: absolute;
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 6px 6px 0 #808080;
+  border: 2px solid #000;
+  background-color: #e0e0e0;
+  font-family: 'Verdana', sans-serif;
+  z-index: 10;
+  cursor: move;
+}
+
+.win98-title-bar {
+  background: linear-gradient(to right, #000080, #1a1aff);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  user-select: none;
+  cursor: grab;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.window-buttons .btn {
+  width: 14px;
+  height: 14px;
+  background-color: #c0c0c0;
+  border: 1px solid #000;
+  box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+  cursor: pointer;
+}
+.btn.minimize { background-color: #f9dc5c; }
+.btn.maximize { background-color: #6a994e; }
+.btn.close    { background-color: #ef233c; }
+
+.win98-content {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-top: 2px solid #000;
+  box-shadow: inset 2px 2px 5px #ccc;
+}
+
 ul {
   list-style: none;
-  padding: 0;
+  padding-left: 1rem;
 }
 ul li {
-  margin: 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
 /* Fondo animado */
-
 .background {
   position: fixed;
   width: 100%;
