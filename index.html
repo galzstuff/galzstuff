@@ -143,5 +143,67 @@
       });
     });
   </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const windows = document.querySelectorAll('.win98-window');
+
+    function randomPosition(el) {
+      const margin = 20;
+      const winWidth = window.innerWidth;
+      const winHeight = window.innerHeight;
+      const elWidth = el.offsetWidth;
+      const elHeight = el.offsetHeight;
+
+      const x = Math.floor(Math.random() * (winWidth - elWidth - margin * 2)) + margin;
+      const y = Math.floor(Math.random() * (winHeight - elHeight - margin * 2)) + margin;
+
+      el.style.left = x + 'px';
+      el.style.top = y + 'px';
+    }
+
+    windows.forEach(win => {
+      randomPosition(win);
+
+      const bar = win.querySelector('.win98-title-bar');
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+
+      bar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - win.offsetLeft;
+        offsetY = e.clientY - win.offsetTop;
+        win.style.zIndex = Date.now();
+        bar.style.cursor = 'grabbing';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          let newX = e.clientX - offsetX;
+          let newY = e.clientY - offsetY;
+
+          const maxX = window.innerWidth - win.offsetWidth;
+          const maxY = window.innerHeight - win.offsetHeight;
+
+          if(newX < 0) newX = 0;
+          if(newY < 0) newY = 0;
+          if(newX > maxX) newX = maxX;
+          if(newY > maxY) newY = maxY;
+
+          win.style.left = newX + 'px';
+          win.style.top = newY + 'px';
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        if(isDragging) {
+          isDragging = false;
+          bar.style.cursor = 'grab';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
