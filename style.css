@@ -151,3 +151,10 @@ ul li {
   left: 500px;
 }
 
+header h1 {
+  font-family: 'm6x11plus', sans-serif; 
+}
+
+header .subtitle {
+  font-family: 'm6x11plus', sans-serif; 
+}
