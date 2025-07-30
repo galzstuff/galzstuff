@@ -4,417 +4,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gal's Stuff</title>
-  <link rel="icon" href="https://www.zeldacapital.com/images/icons/mycomputer.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    body {
+      background: url('https://64.media.tumblr.com/tumblr_ma4fiv2Y0J1r8b5nlo1_500.gifv') center center / cover no-repeat fixed;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .win98-window {
+      position: absolute;
+      width: 300px;
+      z-index: 1;
+    }
+    .title-bar-text {
+      white-space: nowrap;
+    }
+    .window-body {
+      font-size: 14px;
+    }
+    .lang-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+    .music-control {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
-
-  <div class="background">
-    <div class="bubbles"></div>
-    <div class="clouds"></div>
-  </div>
-
-  <header>
-    <h1 class="animate__animated animate__fadeInDown">Gal's Stuff</h1>
-    <p class="subtitle animate__animated animate__fadeIn">hey there.</p>
-    <button id="langBtn">Español</button>
-  </header>
-
-  <div class="win98-window" id="inicio" data-aos="fade-up">
-    <div class="win98-title-bar">
-      <span>Start</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content">
-      <h2>Start</h2>
-      <p>Welcome! This is a lil intro webpage. Find more info about me on the different windows on the page.</p>
+  <button id="langBtn" class="lang-btn">Español</button>
+  <div class="win98-window" style="top: 20px; left: 20px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.inicio.title">Inicio</div></div>
+    <div class="window-body">
+      <h2 data-key="windows.inicio.heading">Inicio</h2>
+      <p data-key="windows.inicio.content">¡Bienvenido! Esta es una pequeña página de introducción. Puedes encontrar más información sobre mí en las distintas ventanas de la página.</p>
     </div>
   </div>
 
-  <div class="win98-window" id="sobremi" data-aos="fade-up" data-aos-delay="200">
-    <div class="win98-title-bar">
-      <span>About me</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content">
-      <h2>About me</h2>
-      <p>Lemme introduce myself appropiately. I'm Gal. I like doing things on the internet, coding, playing videogames and listening to music.</p>
-      <p>I'm from Spain. I talk in Spanish (duh), English and Catalan! (and also German but I'm learning and I'm not very fluid and stuff, but well :p)</p>
+  <div class="win98-window" style="top: 20px; left: 360px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.sobremi.title">Sobre mí</div></div>
+    <div class="window-body">
+      <h2 data-key="windows.sobremi.heading">Sobre mí</h2>
+      <p data-key="windows.sobremi.content0">Déjame presentarme como es debido. Soy Gal. Me gusta hacer cosas en internet, programar, jugar videojuegos y escuchar música.</p>
+      <p data-key="windows.sobremi.content1">Soy de España. Hablo español (obvio), inglés y catalán. (y también alemán, pero estoy aprendiendo y no soy muy fluido aún, pero bueno :p)</p>
     </div>
   </div>
 
-  <div class="win98-window" id="redes" data-aos="fade-up" data-aos-delay="400">
-    <div class="win98-title-bar">
-      <span>Socials</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content">
-      <h2>Socials</h2>
+  <div class="win98-window" style="top: 300px; left: 20px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.redes.title">Redes</div></div>
+    <div class="window-body">
+      <h2 data-key="windows.redes.heading">Redes</h2>
       <ul>
-        <li><a href="https://discord.gg/3f4CZK2B5R" target="_blank">Discord Server</a></li>
-        <li><a href="https://discord.gg/kwZZzF66" target="_blank">Discord Friend Link</a> (if it doesn't work just DM imgal_ on Discord)</li>
-        <li><a href="https://twitter.com/AKAIndiee" target="_blank">Twitter/X</a></li>
-        <li><a href="https://www.tiktok.com/@imgal__" target="_blank">TikTok</a></li>
-        <li><a href="https://www.youtube.com/@im_gal" target="_blank">YouTube</a></li>
-        <li><a href="https://www.roblox.com/users/1879315878/profile" target="_blank">Roblox Profile</a></li>
-        <li><a href="https://steamcommunity.com/id/ImGal/" target="_blank">Steam Profile</a></li>
-        <li>Accepting DMs and Friend Requests if they aren't inappropriate</li>
-        <li><a href="https://galzstuff.my.canva.site">My old website, made in Canva and here for archival purposes</a></li>
+        <li><a href="https://discord.com/users/1205630926695766056" target="_blank">Discord</a></li>
+        <li><a href="https://x.com/fakegal" target="_blank">Twitter</a></li>
+        <li><a href="https://tiktok.com/@fakegal" target="_blank">TikTok</a></li>
+        <li><a href="https://youtube.com/@fakegal" target="_blank">YouTube</a></li>
+        <li><a href="https://roblox.com/users/1791604738/profile" target="_blank">Roblox</a></li>
+        <li><a href="https://steamcommunity.com/id/fakegal" target="_blank">Steam</a></li>
       </ul>
+      <p data-key="windows.redes.footer">Acepto DMs y solicitudes de amistad si no son inapropiadas</p>
+      <p><a href="https://galzstuff.my.canva.site" target="_blank" data-key="windows.redes.archive">Mi web antigua, hecha en Canva y aquí por motivos de archivo</a></p>
     </div>
   </div>
 
-  <div class="win98-window" id="intereses" data-aos="fade-up" data-aos-delay="600">
-    <div class="win98-title-bar">
-      <span>Interests</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content">
-      <h2>Interests</h2>
+  <div class="win98-window" style="top: 300px; left: 360px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.intereses.title">Intereses</div></div>
+    <div class="window-body">
+      <h2 data-key="windows.intereses.heading">Intereses</h2>
       <ul>
-        <li>Forsaken</li>
-        <li>Balatro</li>
-        <li>Creatures of Sonaria</li>
-        <li>VOCALOID, UTAU, SynthV, etc.</li>
-        <li>Project SEKAI and Project DIVA</li>
-        <li>Valve games</li>
+        <li>Vocaloid / UTAU / SynthV</li>
+        <li>Sanrio / Hello Kitty</li>
+        <li>Tamagotchis</li>
         <li>Roblox</li>
-        <li>Minecraft</li>
-        <li>Yeaaa a lot of stuff — don’t mind asking if I like something when DM'ing, but checking my socials might help!</li>
+        <li>Juegos retro</li>
+        <li>Juegos de Nintendo</li>
+        <li>Juegos de terror</li>
+        <li>Programación web</li>
+        <li>Pixel art</li>
+        <li>Emuladores</li>
       </ul>
+      <p data-key="windows.intereses.extra">Sí, muchas cosas — no dudes en preguntarme si me gusta algo cuando me escribas, ¡aunque revisar mis redes puede ayudarte!</p>
     </div>
   </div>
 
-  <div class="win98-window" id="contador" data-aos="fade-up" data-aos-delay="800" style="width: 300px;">
-    <div class="win98-title-bar">
-      <span>Visitor Counter</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content" style="text-align: center;">
-      <a href='https://www.free-counters.org/'>free-counters.org</a> 
-      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=0d76132148e09911157cd5b3f9d660f81a990bd6'></script>
-      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1371378/t/10"></script>
+  <div class="win98-window" style="top: 580px; left: 20px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.contador.title">Contador de visitas</div></div>
+    <div class="window-body">
+      <img src="https://counter.visits.gal/api/galzstuff" alt="Contador de visitas"/>
     </div>
   </div>
 
-  <div class="win98-window" id="discord-status" data-aos="fade-up" data-aos-delay="1000" style="width: 320px;">
-    <div class="win98-title-bar">
-      <span>Discord Status</span>
-      <div class="window-buttons">
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
-        <span class="btn close"></span>
-      </div>
-    </div>
-    <div class="win98-content" id="discord-content" style="text-align: center; font-family: monospace;">
-      Loading Discord status...
+  <div class="win98-window" style="top: 580px; left: 360px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.discord.title">Estado de Discord</div></div>
+    <div class="window-body">
+      <p id="discordStatus" data-key="windows.discord.loading">Cargando estado de Discord...</p>
     </div>
   </div>
 
-  <div id="taskbar" style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #000080;
-    padding: 5px;
-    display: flex;
-    gap: 8px;
-    z-index: 9999;
-    box-sizing: border-box;
-    min-height: 30px;
-  ">
-    <!-- Botones para restaurar ventanas cerradas aparecerán aquí -->
+  <div class="win98-window" style="top: 860px; left: 20px;" data-aos="fade-up">
+    <div class="title-bar"><div class="title-bar-text" data-key="windows.music.title">Música</div></div>
+    <div class="window-body">
+      <audio id="bgMusic" src="https://vgmsite.com/soundtracks/animal-crossing-gamecube-gamerip/qqqdszvy/01%20Title%20Screen.mp3" autoplay loop></audio>
+    </div>
   </div>
 
+  <button class="music-control" onclick="toggleMusic()">🔊</button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  const taskbar = document.getElementById('taskbar');
+    AOS.init();
 
-  async function fetchDiscordStatus() {
-    try {
-      const res = await fetch('https://lanyard.cnrad.dev/api/823875991729864725');
-      const data = await res.json();
-  
-      if(data.success) {
-        const discord = data.data;
-        let statusText = 'Offline';
-  
-        switch(discord.discord_status) {
-          case 'online': statusText = 'Online'; break;
-          case 'idle': statusText = 'Idle'; break;
-          case 'dnd': statusText = 'Do Not Disturb'; break;
-          case 'offline': statusText = 'Offline'; break;
-        }
-  
-        let activityText = 'No activity';
-        if(discord.activities && discord.activities.length > 0) {
-          const act = discord.activities[0];
-          activityText = act.details || act.state || act.name || 'Activity detected';
-        }
-  
-        document.getElementById('discord-content').innerHTML = `
-          <strong>Status:</strong> ${statusText}<br>
-          <strong>Activity:</strong> ${activityText}
-        `;
+    const bgMusic = document.getElementById('bgMusic');
+    function toggleMusic() {
+      const btn = document.querySelector('.music-control');
+      if (bgMusic.paused) {
+        bgMusic.play();
+        btn.textContent = "🔊";
       } else {
-        document.getElementById('discord-content').innerText = 'Failed to fetch Discord status.';
+        bgMusic.pause();
+        btn.textContent = "🔇";
       }
-    } catch(err) {
-      document.getElementById('discord-content').innerText = 'Error fetching Discord status.';
-      console.error(err);
     }
-  }
-  
-  fetchDiscordStatus();
-  setInterval(fetchDiscordStatus, 30000); // actualiza cada 30s
-  
-  
-  // Manejo de ventanas y barra de tareas
-  
-  document.querySelectorAll('.win98-window .btn.close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', () => {
-      const windowDiv = closeBtn.closest('.win98-window');
-      windowDiv.style.display = 'none';
-  
-      const id = windowDiv.id;
-      if (!document.getElementById(`taskbtn-${id}`)) {
-        const btn = document.createElement('button');
-        btn.id = `taskbtn-${id}`;
-        btn.textContent = windowDiv.querySelector('.win98-title-bar span').textContent;
-        btn.style.cursor = 'pointer';
-        btn.style.padding = '4px 10px';
-        btn.style.border = 'none';
-        btn.style.borderRadius = '4px';
-        btn.style.backgroundColor = '#1a1aff';
-        btn.style.color = 'white';
-        btn.style.fontWeight = 'bold';
-  
-        btn.onclick = () => {
-          windowDiv.style.display = 'block';
-          btn.remove();
-        };
-  
-        taskbar.appendChild(btn);
+
+    const translations = {
+      en: {
+        langBtn: "Español",
+        windows: {
+          inicio: {
+            title: "Start", heading: "Start",
+            content: "Welcome! This is a lil intro webpage. Find more info about me on the different windows on the page."
+          },
+          sobremi: {
+            title: "About me", heading: "About me",
+            content0: "Lemme introduce myself appropiately. I'm Gal. I like doing things on the internet, coding, playing videogames and listening to music.",
+            content1: "I'm from Spain. I talk in Spanish (duh), English and Catalan! (and also German but I'm learning and I'm not very fluid and stuff, but well :p)"
+          },
+          redes: {
+            title: "Socials", heading: "Socials",
+            footer: "Accepting DMs and Friend Requests if they aren't inappropriate",
+            archive: "My old website, made in Canva and here for archival purposes"
+          },
+          intereses: {
+            title: "Interests", heading: "Interests",
+            extra: "Yeaaa a lot of stuff — don’t mind asking if I like something when DM'ing, but checking my socials might help!"
+          },
+          contador: { title: "Visitor Counter" },
+          discord: {
+            title: "Discord Status",
+            loading: "Loading Discord status...",
+            failed: "Failed to fetch Discord status.",
+            error: "Error fetching Discord status."
+          },
+          music: { title: "Music" }
+        }
+      },
+      es: {
+        langBtn: "English",
+        windows: {
+          inicio: {
+            title: "Inicio", heading: "Inicio",
+            content: "¡Bienvenido! Esta es una pequeña página de introducción. Puedes encontrar más información sobre mí en las distintas ventanas de la página."
+          },
+          sobremi: {
+            title: "Sobre mí", heading: "Sobre mí",
+            content0: "Déjame presentarme como es debido. Soy Gal. Me gusta hacer cosas en internet, programar, jugar videojuegos y escuchar música.",
+            content1: "Soy de España. Hablo español (obvio), inglés y catalán. (y también alemán, pero estoy aprendiendo y no soy muy fluido aún, pero bueno :p)"
+          },
+          redes: {
+            title: "Redes", heading: "Redes",
+            footer: "Acepto DMs y solicitudes de amistad si no son inapropiadas",
+            archive: "Mi web antigua, hecha en Canva y aquí por motivos de archivo"
+          },
+          intereses: {
+            title: "Intereses", heading: "Intereses",
+            extra: "Sí, muchas cosas — no dudes en preguntarme si me gusta algo cuando me escribas, ¡aunque revisar mis redes puede ayudarte!"
+          },
+          contador: { title: "Contador de visitas" },
+          discord: {
+            title: "Estado de Discord",
+            loading: "Cargando estado de Discord...",
+            failed: "No se pudo obtener el estado de Discord.",
+            error: "Error al obtener el estado de Discord."
+          },
+          music: { title: "Música" }
+        }
       }
-    });
-  });
-  </script>
+    };
 
-  <audio id="clickSound" src="https://www.myinstants.com/media/sounds/windows-xp-ding.mp3"></audio>
+    let currentLang = "es";
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Sonido al hacer click en botones
-    const sound = document.getElementById('clickSound');
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        sound.currentTime = 0;
-        sound.play();
-      });
+    document.getElementById("langBtn").addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      updateLanguage();
     });
 
-    // Movimiento estilo Win98
-    const windows = document.querySelectorAll('.win98-window');
-    windows.forEach(win => {
-      const bar = win.querySelector('.win98-title-bar');
-      let isDragging = false;
-      let offsetX = 0, offsetY = 0;
+    function updateLanguage() {
+      const t = translations[currentLang];
+      document.documentElement.lang = currentLang;
+      document.getElementById("langBtn").textContent = t.langBtn;
 
-      bar.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - win.offsetLeft;
-        offsetY = e.clientY - win.offsetTop;
-        win.style.zIndex = Date.now(); // bring to front
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const keys = el.dataset.key.split(".");
+        let text = t;
+        keys.forEach(k => text = text?.[k]);
+        if (text) el.textContent = text;
       });
-
-      document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-          win.style.left = `${e.clientX - offsetX}px`;
-          win.style.top = `${e.clientY - offsetY}px`;
-        }
-      });
-
-      document.addEventListener('mouseup', () => {
-        isDragging = false;
-      });
-    });
-  </script>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    const windows = document.querySelectorAll('.win98-window');
-
-    function randomPosition(el) {
-      const margin = 20;
-      const winWidth = window.innerWidth;
-      const winHeight = window.innerHeight;
-      const elWidth = el.offsetWidth;
-      const elHeight = el.offsetHeight;
-
-      const x = Math.floor(Math.random() * (winWidth - elWidth - margin * 2)) + margin;
-      const y = Math.floor(Math.random() * (winHeight - elHeight - margin * 2)) + margin;
-
-      el.style.left = x + 'px';
-      el.style.top = y + 'px';
     }
 
-    windows.forEach(win => {
-      
-
-      const bar = win.querySelector('.win98-title-bar');
-      let isDragging = false;
-      let offsetX = 0, offsetY = 0;
-
-      bar.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - win.offsetLeft;
-        offsetY = e.clientY - win.offsetTop;
-        win.style.zIndex = Date.now();
-        bar.style.cursor = 'grabbing';
-      });
-
-      document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-          let newX = e.clientX - offsetX;
-          let newY = e.clientY - offsetY;
-
-          const maxX = window.innerWidth - win.offsetWidth;
-          const maxY = window.innerHeight - win.offsetHeight;
-
-          if(newX < 0) newX = 0;
-          if(newY < 0) newY = 0;
-          if(newX > maxX) newX = maxX;
-          if(newY > maxY) newY = maxY;
-
-          win.style.left = newX + 'px';
-          win.style.top = newY + 'px';
-        }
-      });
-
-      document.addEventListener('mouseup', () => {
-        if(isDragging) {
-          isDragging = false;
-          bar.style.cursor = 'grab';
-        }
-      });
-    });
-  </script>
-<audio id="bgMusic" src="https://files.catbox.moe/w2vvqa.mp3" loop></audio>
-<script>
-  const bgMusic = document.getElementById('bgMusic');
-  let musicStarted = false;
-
-  function startMusic() {
-    if (!musicStarted) {
-      bgMusic.play().catch(e => {
-        console.warn('No se pudo iniciar la música automáticamente:', e);
-      });
-      musicStarted = true;
-    }
-  }
-
-  // Evento para escritorio
-  window.addEventListener('mousemove', startMusic);
-
-  // Evento para móvil / touch
-  window.addEventListener('touchstart', startMusic);
-</script>
-<div id="soundToggle" class="win98-window" style="width: auto; top: 10px; right: 10px; position: fixed; z-index: 1000;">
-  <div class="win98-title-bar">
-    <span>Music</span>
-    <div class="window-buttons">
-      <span class="btn close" onclick="document.getElementById('soundToggle').style.display='none'"></span>
-    </div>
-  </div>
-  <div class="win98-content" style="padding: 0.5rem;">
-    <button id="toggleMusic" style="
-      font-family: 'Verdana', sans-serif;
-      background-color: #e0e0e0;
-      border: 2px solid #000;
-      box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
-      padding: 4px 10px;
-      cursor: pointer;
-    ">🔊</button>
-  </div>
-</div>
-
-<script>
-  const bgMusic = document.getElementById('bgMusic');
-  const toggleBtn = document.getElementById('toggleMusic');
-
-  toggleBtn.addEventListener('click', () => {
-    if (bgMusic.muted) {
-      bgMusic.muted = false;
-      toggleBtn.textContent = '🔊';
-    } else {
-      bgMusic.muted = true;
-      toggleBtn.textContent = '🔇';
-    }
-  });
-</script>
-<script>
-  let currentLang = localStorage.getItem('lang') || 'en';
-
-  const translations = {
-    en: {
-      title: "Gal's Stuff",
-      subtitle: "hey there.",
-      visits: "Visits",
-      discordStatus: "Discord Status",
-      unknown: "Unknown"
-    },
-    es: {
-      title: "Gal's Stuff",
-      subtitle: "hola.",
-      visits: "Visitas",
-      discordStatus: "Estado de Discord",
-      unknown: "Desconocido"
-    }
-  };
-
-  const langBtn = document.getElementById('langBtn');
-  langBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'es' : 'en';
-    localStorage.setItem('lang', currentLang);
     updateLanguage();
-  });
 
-  function updateLanguage() {
-    const t = translations[currentLang];
-    document.querySelector('header h1').textContent = t.title;
-    document.querySelector('.subtitle').textContent = t.subtitle;
-    document.getElementById('visitCountLabel').textContent = t.visits;
-    document.getElementById('discordStatusLabel').textContent = t.discordStatus;
-    langBtn.textContent = currentLang === 'en' ? 'Español' : 'English';
-  }
-
-  document.addEventListener('DOMContentLoaded', updateLanguage);
-</script>
+    fetch("https://api.lanyard.rest/v1/users/1205630926695766056")
+      .then(res => res.json())
+      .then(data => {
+        const status = data.data.discord_status;
+        const activity = data.data.activities.find(a => a.type === 0);
+        document.getElementById("discordStatus").textContent = `${translations[currentLang].windows.discord.status} ${status}${activity ? `\n${translations[currentLang].windows.discord.activity} ${activity.name}` : ''}`;
+      })
+      .catch(() => {
+        document.getElementById("discordStatus").textContent = translations[currentLang].windows.discord.failed;
+      });
+  </script>
 </body>
 </html>
