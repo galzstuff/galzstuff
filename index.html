@@ -225,5 +225,38 @@
   // Evento para móvil / touch
   window.addEventListener('touchstart', startMusic);
 </script>
+<div id="soundToggle" class="win98-window" style="width: auto; top: 10px; right: 10px; position: fixed; z-index: 1000;">
+  <div class="win98-title-bar">
+    <span>Music</span>
+    <div class="window-buttons">
+      <span class="btn close" onclick="document.getElementById('soundToggle').style.display='none'"></span>
+    </div>
+  </div>
+  <div class="win98-content" style="padding: 0.5rem;">
+    <button id="toggleMusic" style="
+      font-family: 'Verdana', sans-serif;
+      background-color: #e0e0e0;
+      border: 2px solid #000;
+      box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+      padding: 4px 10px;
+      cursor: pointer;
+    ">🔊</button>
+  </div>
+</div>
+
+<script>
+  const bgMusic = document.getElementById('bgMusic');
+  const toggleBtn = document.getElementById('toggleMusic');
+
+  toggleBtn.addEventListener('click', () => {
+    if (bgMusic.muted) {
+      bgMusic.muted = false;
+      toggleBtn.textContent = '🔊';
+    } else {
+      bgMusic.muted = true;
+      toggleBtn.textContent = '🔇';
+    }
+  });
+</script>
 </body>
 </html>
