@@ -131,3 +131,24 @@ ul li {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+#inicio {
+  top: 120px;
+  left: 50px;
+}
+
+#sobremi {
+  top: 150px;
+  left: 500px;
+}
+
+#redes {
+  top: 400px;
+  left: 50px;
+}
+
+#intereses {
+  top: 430px;
+  left: 500px;
+}
+
