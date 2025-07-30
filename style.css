@@ -91,15 +91,14 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-/* Fondo animado */
 .background {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
-  overflow: hidden;
   top: 0;
   left: 0;
+  background: url('https://i.imgur.com/oGRg8Pt.jpg') center/cover no-repeat;
 }
 
 .bubbles::before {
