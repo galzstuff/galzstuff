@@ -19,6 +19,7 @@
   <header>
     <h1 class="animate__animated animate__fadeInDown">Gal's Stuff</h1>
     <p class="subtitle animate__animated animate__fadeIn">hey there.</p>
+    <button id="langBtn">Español</button>
   </header>
 
   <div class="win98-window" id="inicio" data-aos="fade-up">
@@ -101,6 +102,125 @@
       </ul>
     </div>
   </div>
+
+  <div class="win98-window" id="contador" data-aos="fade-up" data-aos-delay="800" style="width: 300px;">
+    <div class="win98-title-bar">
+      <span>Visitor Counter</span>
+      <div class="window-buttons">
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+        <span class="btn close"></span>
+      </div>
+    </div>
+    <div class="win98-content" style="text-align: center;">
+      <a href='https://www.free-counters.org/'>free-counters.org</a> 
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=0d76132148e09911157cd5b3f9d660f81a990bd6'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1371378/t/10"></script>
+    </div>
+  </div>
+
+  <div class="win98-window" id="discord-status" data-aos="fade-up" data-aos-delay="1000" style="width: 320px;">
+    <div class="win98-title-bar">
+      <span>Discord Status</span>
+      <div class="window-buttons">
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+        <span class="btn close"></span>
+      </div>
+    </div>
+    <div class="win98-content" id="discord-content" style="text-align: center; font-family: monospace;">
+      Loading Discord status...
+    </div>
+  </div>
+
+  <div id="taskbar" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000080;
+    padding: 5px;
+    display: flex;
+    gap: 8px;
+    z-index: 9999;
+    box-sizing: border-box;
+    min-height: 30px;
+  ">
+    <!-- Botones para restaurar ventanas cerradas aparecerán aquí -->
+  </div>
+
+  <script>
+  const taskbar = document.getElementById('taskbar');
+
+  async function fetchDiscordStatus() {
+    try {
+      const res = await fetch('https://lanyard.cnrad.dev/api/823875991729864725');
+      const data = await res.json();
+  
+      if(data.success) {
+        const discord = data.data;
+        let statusText = 'Offline';
+  
+        switch(discord.discord_status) {
+          case 'online': statusText = 'Online'; break;
+          case 'idle': statusText = 'Idle'; break;
+          case 'dnd': statusText = 'Do Not Disturb'; break;
+          case 'offline': statusText = 'Offline'; break;
+        }
+  
+        let activityText = 'No activity';
+        if(discord.activities && discord.activities.length > 0) {
+          const act = discord.activities[0];
+          activityText = act.details || act.state || act.name || 'Activity detected';
+        }
+  
+        document.getElementById('discord-content').innerHTML = `
+          <strong>Status:</strong> ${statusText}<br>
+          <strong>Activity:</strong> ${activityText}
+        `;
+      } else {
+        document.getElementById('discord-content').innerText = 'Failed to fetch Discord status.';
+      }
+    } catch(err) {
+      document.getElementById('discord-content').innerText = 'Error fetching Discord status.';
+      console.error(err);
+    }
+  }
+  
+  fetchDiscordStatus();
+  setInterval(fetchDiscordStatus, 30000); // actualiza cada 30s
+  
+  
+  // Manejo de ventanas y barra de tareas
+  
+  document.querySelectorAll('.win98-window .btn.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+      const windowDiv = closeBtn.closest('.win98-window');
+      windowDiv.style.display = 'none';
+  
+      const id = windowDiv.id;
+      if (!document.getElementById(`taskbtn-${id}`)) {
+        const btn = document.createElement('button');
+        btn.id = `taskbtn-${id}`;
+        btn.textContent = windowDiv.querySelector('.win98-title-bar span').textContent;
+        btn.style.cursor = 'pointer';
+        btn.style.padding = '4px 10px';
+        btn.style.border = 'none';
+        btn.style.borderRadius = '4px';
+        btn.style.backgroundColor = '#1a1aff';
+        btn.style.color = 'white';
+        btn.style.fontWeight = 'bold';
+  
+        btn.onclick = () => {
+          windowDiv.style.display = 'block';
+          btn.remove();
+        };
+  
+        taskbar.appendChild(btn);
+      }
+    });
+  });
+  </script>
 
   <audio id="clickSound" src="https://www.myinstants.com/media/sounds/windows-xp-ding.mp3"></audio>
 
@@ -257,6 +377,44 @@
       toggleBtn.textContent = '🔇';
     }
   });
+</script>
+<script>
+  let currentLang = localStorage.getItem('lang') || 'en';
+
+  const translations = {
+    en: {
+      title: "Gal's Stuff",
+      subtitle: "hey there.",
+      visits: "Visits",
+      discordStatus: "Discord Status",
+      unknown: "Unknown"
+    },
+    es: {
+      title: "Gal's Stuff",
+      subtitle: "hola.",
+      visits: "Visitas",
+      discordStatus: "Estado de Discord",
+      unknown: "Desconocido"
+    }
+  };
+
+  const langBtn = document.getElementById('langBtn');
+  langBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    localStorage.setItem('lang', currentLang);
+    updateLanguage();
+  });
+
+  function updateLanguage() {
+    const t = translations[currentLang];
+    document.querySelector('header h1').textContent = t.title;
+    document.querySelector('.subtitle').textContent = t.subtitle;
+    document.getElementById('visitCountLabel').textContent = t.visits;
+    document.getElementById('discordStatusLabel').textContent = t.discordStatus;
+    langBtn.textContent = currentLang === 'en' ? 'Español' : 'English';
+  }
+
+  document.addEventListener('DOMContentLoaded', updateLanguage);
 </script>
 </body>
 </html>
