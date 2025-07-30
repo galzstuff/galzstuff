@@ -205,6 +205,25 @@
       });
     });
   </script>
-<audio id="bgMusic" src="https://files.catbox.moe/w2vvqa.mp3" autoplay loop></audio>
+<audio id="bgMusic" src="https://files.catbox.moe/w2vvqa.mp3" loop></audio>
+<script>
+  const bgMusic = document.getElementById('bgMusic');
+  let musicStarted = false;
+
+  function startMusic() {
+    if (!musicStarted) {
+      bgMusic.play().catch(e => {
+        console.warn('No se pudo iniciar la música automáticamente:', e);
+      });
+      musicStarted = true;
+    }
+  }
+
+  // Evento para escritorio
+  window.addEventListener('mousemove', startMusic);
+
+  // Evento para móvil / touch
+  window.addEventListener('touchstart', startMusic);
+</script>
 </body>
 </html>
