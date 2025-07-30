@@ -151,6 +151,13 @@ ul li {
   left: 500px;
 }
 
+@font-face {
+  font-family: 'm6x11plus';
+  src: url('https://raw.githubusercontent.com/galzstuff/balatrofontforalilwebsite/main/m6x11plus.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 header h1 {
   font-family: 'm6x11plus', monospace; 
 }
